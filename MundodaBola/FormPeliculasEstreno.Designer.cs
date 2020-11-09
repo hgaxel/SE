@@ -52,7 +52,6 @@
             // 
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.listJogador);
-            this.groupBox2.Enabled = false;
             this.groupBox2.Location = new System.Drawing.Point(215, 31);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(662, 298);
@@ -215,7 +214,7 @@
             this.Controls.Add(this.groupBox2);
             this.Name = "FormPeliculasEstreno";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormPeliculasEstreno";
+            this.Text = "PELICULAS A ESTRENAR";
             this.Load += new System.EventHandler(this.FormPeliculasEstreno_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);

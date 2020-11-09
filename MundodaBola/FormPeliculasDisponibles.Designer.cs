@@ -75,13 +75,14 @@
             // 
             // btnConsulta
             // 
-            this.btnConsulta.Location = new System.Drawing.Point(764, 401);
+            this.btnConsulta.Location = new System.Drawing.Point(1210, 381);
             this.btnConsulta.Margin = new System.Windows.Forms.Padding(4);
             this.btnConsulta.Name = "btnConsulta";
             this.btnConsulta.Size = new System.Drawing.Size(143, 51);
             this.btnConsulta.TabIndex = 9;
             this.btnConsulta.Text = "Consulta";
             this.btnConsulta.UseVisualStyleBackColor = true;
+            this.btnConsulta.Visible = false;
             this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
             // 
             // cbOpcoes
@@ -93,11 +94,12 @@
             "Atacante Europeu",
             "Zagueiro Brasileiro",
             "Prueba"});
-            this.cbOpcoes.Location = new System.Drawing.Point(659, 350);
+            this.cbOpcoes.Location = new System.Drawing.Point(757, 326);
             this.cbOpcoes.Margin = new System.Windows.Forms.Padding(4);
             this.cbOpcoes.Name = "cbOpcoes";
             this.cbOpcoes.Size = new System.Drawing.Size(133, 24);
             this.cbOpcoes.TabIndex = 8;
+            this.cbOpcoes.Visible = false;
             // 
             // listJogador
             // 
@@ -109,7 +111,7 @@
             this.listJogador.Location = new System.Drawing.Point(26, 37);
             this.listJogador.Margin = new System.Windows.Forms.Padding(4);
             this.listJogador.Name = "listJogador";
-            this.listJogador.Size = new System.Drawing.Size(672, 180);
+            this.listJogador.Size = new System.Drawing.Size(672, 158);
             this.listJogador.TabIndex = 7;
             // 
             // pregunta
@@ -180,7 +182,7 @@
             this.button1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(1024, 287);
+            this.button1.Location = new System.Drawing.Point(1008, 287);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(220, 40);
@@ -219,9 +221,9 @@
             this.groupBoxDatos.Controls.Add(this.label1);
             this.groupBoxDatos.Enabled = false;
             this.groupBoxDatos.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBoxDatos.Location = new System.Drawing.Point(15, 381);
+            this.groupBoxDatos.Location = new System.Drawing.Point(15, 349);
             this.groupBoxDatos.Name = "groupBoxDatos";
-            this.groupBoxDatos.Size = new System.Drawing.Size(728, 400);
+            this.groupBoxDatos.Size = new System.Drawing.Size(713, 400);
             this.groupBoxDatos.TabIndex = 18;
             this.groupBoxDatos.TabStop = false;
             this.groupBoxDatos.Text = "DATOS PELICULA";
@@ -367,7 +369,7 @@
             // button2
             // 
             this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button2.Location = new System.Drawing.Point(210, 238);
+            this.button2.Location = new System.Drawing.Point(213, 207);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(282, 52);
             this.button2.TabIndex = 19;
@@ -383,7 +385,7 @@
             this.groupBoxPeliculas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBoxPeliculas.Location = new System.Drawing.Point(15, 18);
             this.groupBoxPeliculas.Name = "groupBoxPeliculas";
-            this.groupBoxPeliculas.Size = new System.Drawing.Size(728, 309);
+            this.groupBoxPeliculas.Size = new System.Drawing.Size(728, 293);
             this.groupBoxPeliculas.TabIndex = 20;
             this.groupBoxPeliculas.TabStop = false;
             this.groupBoxPeliculas.Text = "PELICULAS ENCONTRADAS";
@@ -402,7 +404,7 @@
             this.groupFiltrado.Controls.Add(this.label12);
             this.groupFiltrado.Enabled = false;
             this.groupFiltrado.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupFiltrado.Location = new System.Drawing.Point(794, 488);
+            this.groupFiltrado.Location = new System.Drawing.Point(757, 456);
             this.groupFiltrado.Name = "groupFiltrado";
             this.groupFiltrado.Size = new System.Drawing.Size(573, 293);
             this.groupFiltrado.TabIndex = 21;
@@ -537,7 +539,7 @@
             // button4
             // 
             this.button4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button4.Location = new System.Drawing.Point(996, 412);
+            this.button4.Location = new System.Drawing.Point(917, 386);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(248, 52);
             this.button4.TabIndex = 23;
@@ -550,7 +552,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1438, 793);
+            this.ClientSize = new System.Drawing.Size(1382, 793);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.groupFiltrado);
             this.Controls.Add(this.groupBoxPeliculas);
@@ -567,7 +569,7 @@
             this.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.Name = "FormPeliculasDisponibles";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "PELICULAS DISPONIBLES";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBoxDatos.ResumeLayout(false);
             this.groupBoxDatos.PerformLayout();
