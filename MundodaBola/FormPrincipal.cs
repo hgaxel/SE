@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SbsSW.SwiPlCs;
 using System.Windows.Forms;
 
 namespace SistemaExperto
@@ -28,6 +29,18 @@ namespace SistemaExperto
         {
             FormPeliculasEstreno frm = new FormPeliculasEstreno();
             frm.Show();
+        }
+
+        private void FormPrincipal_Load(object sender, EventArgs e)
+        {
+            /* usando o método Environment.SetEnvironmentVariable para crear variable de ambiente de swipl .
+            * para trabajar com prolog*/
+            Environment.SetEnvironmentVariable("SWI_HOME_DIR", @"prolog"); // establecer las variables en el archivo PL
+            Environment.SetEnvironmentVariable("Path", @"prolog");         // establecer las variables en el archivo PL
+            Environment.SetEnvironmentVariable("Path", @"prolog\\bin");    // establecer las variables en el archivo PL
+
+            string[] p = { "-q", "-f", @"peliculas.pl" };
+            PlEngine.Initialize(p);
         }
     }
 }
