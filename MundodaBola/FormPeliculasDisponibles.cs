@@ -495,8 +495,21 @@ namespace MundodaBola
                     PlQuery pelicula = new PlQuery("listaPeliculas(" + consultaFinal + ")");
                     int cont = 0;
                     foreach (PlQueryVariables v in pelicula.SolutionVariables)
-                        listJogador.Items.Add(v["R1"].ToString()+ v["R2"].ToString()+ v["R3"].ToString()+ v["R4"].ToString());
-                        //FALTA TERMINAR    SEPARAR DATOS POR FILAS
+                    {
+                        //listJogador.Items.Add(v["R1"].ToString()+ v["R2"].ToString()+ v["R3"].ToString()+ v["R4"].ToString());
+                        //var genero = v["R1"].ToList();
+
+                        var genero = v["R1"].Concat(v["R2"].Concat(v["R3"].Concat(v["R4"])));
+
+                        //int cantidad = genero1.Count();
+
+                        foreach ( var peli in genero) 
+                        {
+                            listJogador.Items.Add(peli);
+                        }
+
+
+                    }
 
                     groupBoxPeliculas.Enabled = true;
 
@@ -540,6 +553,9 @@ namespace MundodaBola
 
         private void button2_Click(object sender, EventArgs e)
         {
+
+            if (listJogador.SelectedItem == null) return; 
+
             groupBoxDatos.Enabled = true;
             string peliculaSeleccionada = listJogador.SelectedItem.ToString();
             
