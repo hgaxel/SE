@@ -57,7 +57,6 @@ namespace MundodaBola
             //Usando estrutura condicional para as consultas
             switch (Convert.ToString(cbOpcoes.SelectedItem))
             {
-
                 case "Atacante Brasileiro":
                     PlQuery atacantebrasileiro = new PlQuery("atacantebrasileiro(X)");
                     
@@ -202,19 +201,17 @@ namespace MundodaBola
         }
         private void Limpiar()
         {
-            this.opcion1.Checked = false;
+            this.opcion1.Checked = true;
             this.opcion2.Checked = false;
             this.opcion3.Checked = false;
             this.opcion4.Checked = false;
         }
-
 
         private void button1_Click(object sender, EventArgs e)
         {
             switch (seleccion)
             {
                 case 1:
-
                     if (this.opcion1.Checked == true)
                     {
                         totalLista1++;
@@ -238,7 +235,6 @@ namespace MundodaBola
                     pregunta2();
                     Limpiar();
 
-
                     break;
 
                 case 2:
@@ -254,12 +250,12 @@ namespace MundodaBola
                     else
                     if (this.opcion3.Checked == true)
                     {
-                        totalLista3++;
+                        totalLista1++;
                     }
                     else
                     if (this.opcion4.Checked == true)
                     {
-                        totalLista4++;
+                        totalLista2++;
                     }
                     pregunta3();
                     Limpiar();
@@ -268,21 +264,24 @@ namespace MundodaBola
                 case 3:
                     if (this.opcion1.Checked == true)
                     {
-                        totalLista1++;
+                        totalLista4 = +2;
                     }
                     else
                      if (this.opcion2.Checked == true)
                     {
-                        totalLista2++;
+                        totalLista3++;
                     }
                     else
                      if (this.opcion3.Checked == true)
                     {
-                        totalLista3++;
+                        totalLista1++;
                     }
                     else
                      if (this.opcion4.Checked == true)
                     {
+                        totalLista1++;
+                        totalLista2++;
+                        totalLista3++;
                         totalLista4++;
                     }
                     pregunta4();
@@ -297,16 +296,17 @@ namespace MundodaBola
                     else
                     if (this.opcion2.Checked == true)
                     {
-                        totalLista2++;
+                        totalLista1++;
                     }
                     else
                     if (this.opcion3.Checked == true)
                     {
-                        totalLista3++;
+                        totalLista2++;
                     }
                     else
                     if (this.opcion4.Checked == true)
                     {
+                        totalLista3++;
                         totalLista4++;
                     }
                     pregunta5();
@@ -321,17 +321,18 @@ namespace MundodaBola
                     else
                     if (this.opcion2.Checked == true)
                     {
-                        totalLista2++;
+                        totalLista4++;
                     }
                     else
                     if (this.opcion3.Checked == true)
                     {
-                        totalLista3++;
+                        totalLista2++;
                     }
                     else
                     if (this.opcion4.Checked == true)
                     {
-                        totalLista4++;
+                        totalLista2++;
+                        totalLista3++;
                     }
                     pregunta6();
                     Limpiar();
@@ -340,22 +341,22 @@ namespace MundodaBola
                 case 6:
                     if (this.opcion1.Checked == true)
                     {
-                        totalLista1++;
+                        totalLista2++;
                     }
                     else
                     if (this.opcion2.Checked == true)
                     {
-                        totalLista2++;
+                        totalLista3++;
                     }
                     else
                     if (this.opcion3.Checked == true)
                     {
-                        totalLista3++;
+                        totalLista1++;
                     }
                     else
                     if (this.opcion4.Checked == true)
                     {
-                        totalLista4++;
+                        totalLista2++;
                     }
                     pregunta7();
                     Limpiar();
@@ -365,21 +366,22 @@ namespace MundodaBola
                     if (this.opcion1.Checked == true)
                     {
                         totalLista1++;
+                        totalLista3++;
                     }
                     else
-                     if (this.opcion2.Checked == true)
+                    if (this.opcion2.Checked == true)
                     {
                         totalLista2++;
                     }
                     else
-                     if (this.opcion3.Checked == true)
-                    {
-                        totalLista3++;
-                    }
-                    else
-                     if (this.opcion4.Checked == true)
+                    if (this.opcion3.Checked == true)
                     {
                         totalLista4++;
+                    }
+                    else
+                    if (this.opcion4.Checked == true)
+                    {
+                        totalLista1++;
                     }
                     pregunta8();
                     Limpiar();
@@ -388,21 +390,23 @@ namespace MundodaBola
                 case 8:
                     if (this.opcion1.Checked == true)
                     {
-                        totalLista1++;
-                    }
-                    else
-                      if (this.opcion2.Checked == true)
-                    {
+                        totalLista3++;
                         totalLista2++;
                     }
                     else
-                      if (this.opcion3.Checked == true)
+                    if (this.opcion2.Checked == true)
                     {
-                        totalLista3++;
+                        totalLista1++;
                     }
                     else
-                      if (this.opcion4.Checked == true)
+                    if (this.opcion3.Checked == true)
                     {
+                        totalLista1++;
+                    }
+                    else
+                    if (this.opcion4.Checked == true)
+                    {
+                        totalLista3++;
                         totalLista4++;
                     }
                     pregunta9();
@@ -412,17 +416,19 @@ namespace MundodaBola
                 case 9:
                     if (this.opcion1.Checked == true)
                     {
-                        totalLista1++;
+                        totalLista3++;
+                        totalLista4++;
                     }
                     else
                      if (this.opcion2.Checked == true)
                     {
-                        totalLista2++;
+                        totalLista3++;
+                        totalLista4++;
                     }
                     else
                      if (this.opcion3.Checked == true)
                     {
-                        totalLista3++;
+                        totalLista4++;
                     }
                     else
                      if (this.opcion4.Checked == true)
@@ -436,22 +442,22 @@ namespace MundodaBola
                 case 10:
                     if (this.opcion1.Checked == true)
                     {
-                        totalLista1++;
+                        totalLista2++;
                     }
                     else
                     if (this.opcion2.Checked == true)
                     {
-                        totalLista2++;
+                        totalLista1++;
                     }
                     else
                     if (this.opcion3.Checked == true)
                     {
-                        totalLista3++;
+                        totalLista2++;
                     }
                     else
                     if (this.opcion4.Checked == true)
                     {
-                        totalLista4++;
+                        totalLista1++;
                     }
 
                     Limpiar();
@@ -482,7 +488,6 @@ namespace MundodaBola
                                     consultaFinal = "'anime','documentales','infantiles','premiadas',R1,R2,R3,R4";
                                 }
                                     
-
                     MessageBox.Show("LA LISTA DE GENEROS QUE SE ADAPTAN A TUS GUSTOS SON: "+ generosResultantes.ToString() + "\n \n SE PRESENTARA LA LISTA DE PELICULAS RECOMENDADAS PARA TI", 
                                         " RESULTADO DE TEST ", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
