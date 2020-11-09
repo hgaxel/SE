@@ -68,14 +68,14 @@
             this.button2.Text = "CONSULTAR DATOS PELICULA";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // listJogador
+            // listaPeliculas
             // 
             this.listJogador.Font = new System.Drawing.Font("Lucida Console", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listJogador.FormattingEnabled = true;
             this.listJogador.ItemHeight = 18;
             this.listJogador.Location = new System.Drawing.Point(34, 36);
             this.listJogador.Margin = new System.Windows.Forms.Padding(4);
-            this.listJogador.Name = "listJogador";
+            this.listJogador.Name = "listaPeliculas";
             this.listJogador.Size = new System.Drawing.Size(598, 184);
             this.listJogador.TabIndex = 7;
             // 

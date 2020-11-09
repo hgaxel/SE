@@ -46,13 +46,13 @@
             this.btnConsulta.UseVisualStyleBackColor = true;
             this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
             // 
-            // listJogador
+            // listaPeliculas
             // 
             this.listJogador.FormattingEnabled = true;
             this.listJogador.ItemHeight = 16;
             this.listJogador.Location = new System.Drawing.Point(29, 87);
             this.listJogador.Margin = new System.Windows.Forms.Padding(4);
-            this.listJogador.Name = "listJogador";
+            this.listJogador.Name = "listaPeliculas";
             this.listJogador.Size = new System.Drawing.Size(333, 132);
             this.listJogador.TabIndex = 1;
             // 

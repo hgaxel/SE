@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using SbsSW.SwiPlCs;
 using System.Windows.Forms;
 using SbsSW.SwiPlCs.Callback;
+using System.Collections.ObjectModel;
 
 namespace MundodaBola
 {
@@ -48,7 +49,7 @@ namespace MundodaBola
         private void btnConsulta_Click(object sender, EventArgs e)
         {
             //Limpar a tela de consulta a cada nova interação
-            listJogador.Items.Clear();
+            listaPeliculas.Items.Clear();
             //buscar os dados do banco de dados criado através do Prolog
             PlQuery carrega = new PlQuery("carrega('peliculas.bd')");
             carrega.NextSolution();
@@ -61,25 +62,25 @@ namespace MundodaBola
                     PlQuery atacantebrasileiro = new PlQuery("atacantebrasileiro(X)");
                     
                     foreach (PlQueryVariables v in atacantebrasileiro.SolutionVariables)
-                        listJogador.Items.Add(v["X"].ToString());
+                        listaPeliculas.Items.Add(v["X"].ToString());
                     break;
 
                 case "Meia Brasileiro":
                     PlQuery meiabrasileiro = new PlQuery("meiabrasileiro(X)");
                     foreach (PlQueryVariables v in meiabrasileiro.SolutionVariables)
-                        listJogador.Items.Add(v["X"].ToString());
+                        listaPeliculas.Items.Add(v["X"].ToString());
                     break;
 
                 case "Atacante Europeu":
                     PlQuery atacanteeuropeu = new PlQuery("atacanteeuropeu(X)");
                     foreach (PlQueryVariables v in atacanteeuropeu.SolutionVariables)
-                        listJogador.Items.Add(v["X"].ToString());
+                        listaPeliculas.Items.Add(v["X"].ToString());
                     break;
 
                 case "Zagueiro Brasileiro":
                     PlQuery zagueirobrasileiro = new PlQuery("zagueirobrasileiro(X)");
                     foreach (PlQueryVariables v in zagueirobrasileiro.SolutionVariables)
-                        listJogador.Items.Add(v["X"].ToString());
+                        listaPeliculas.Items.Add(v["X"].ToString());
                     break;
 
                 case "Prueba":
@@ -90,11 +91,11 @@ namespace MundodaBola
                     int cont = 0;
                     foreach (PlQueryVariables v in zagueiro.SolutionVariables)
                         //lista.Add(v["X"].ToString());
-                        listJogador.Items.Add(v["X"].ToString());
+                        listaPeliculas.Items.Add(v["X"].ToString());
                     //datavg.Rows[cont].Cells[0].Value = v["X"].ToString();
                     //cont++;
                     //datavg.Rows[0].Cells[v].Value = v["X"].ToString();
-                    //listJogador.Items.Add(v["Y"].ToString());
+                    //listaPeliculas.Items.Add(v["Y"].ToString());
                     break;
             }
         }
@@ -498,32 +499,15 @@ namespace MundodaBola
                     //listaPeliculas1('aventuras','accion','comedias','internacionales',R1,R2,R3,R4).
 
                     PlQuery pelicula = new PlQuery("listaPeliculas(" + consultaFinal + ")");
-                    int cont = 0;
+
                     foreach (PlQueryVariables v in pelicula.SolutionVariables)
                     {
-                        //listJogador.Items.Add(v["R1"].ToString()+ v["R2"].ToString()+ v["R3"].ToString()+ v["R4"].ToString());
-                        //var genero = v["R1"].ToList();
-
                         var genero = v["R1"].Concat(v["R2"].Concat(v["R3"].Concat(v["R4"])));
 
-                        //int cantidad = genero1.Count();
-
-                        foreach ( var peli in genero) 
-                        {
-                            listJogador.Items.Add(peli);
-                        }
-
-
+                        mostrarPelicula(genero);
                     }
 
                     groupBoxPeliculas.Enabled = true;
-
-                    //datavg.Rows[cont].Cells[0].Value = v["X"].ToString();
-                    //cont++;
-                    //datavg.Rows[0].Cells[v].Value = v["X"].ToString();
-                    //listJogador.Items.Add(v["Y"].ToString());
-                    //Application.Exit();
-                    //LLAMAR A EL EVENTO CONSULTAR :  
 
 
                     this.pregunta.Text = " \n            CUESTIONARIO FINALIZADO.         ";
@@ -559,10 +543,12 @@ namespace MundodaBola
         private void button2_Click(object sender, EventArgs e)
         {
 
-            if (listJogador.SelectedItem == null) return; 
+            if (listaPeliculas.SelectedItem == null) return; 
+
+            tbxDescripcion.Text = "";
 
             groupBoxDatos.Enabled = true;
-            string peliculaSeleccionada = listJogador.SelectedItem.ToString();
+            string peliculaSeleccionada = listaPeliculas.SelectedItem.ToString();
             
             if (peliculaSeleccionada == null)
             {
@@ -575,15 +561,18 @@ namespace MundodaBola
                 txtNombre.Text = peliculaSeleccionada;
                 PlQuery pelicula = new PlQuery(consulta);
                 foreach (PlQueryVariables v in pelicula.SolutionVariables)
-                    listBoxDescripcion.Items.Add(v["R"].ToString());
-                //FALTA TERMINAR    SEPARAR DATOS 
+                {
+                    var pelicula_ = v["R"].ToList();
+
+                    mostrarDatosPelicula(pelicula_.ToList());
+                }
             }
         }
 
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
 
-            listJogador.Items.Clear();
+            listaPeliculas.Items.Clear();
 
             if(checkAño.Checked==true && checkGenero.Checked == true && checkEdad.Checked == true)
             {
@@ -591,82 +580,112 @@ namespace MundodaBola
                 string genero = Convert.ToString(comboGenero.SelectedItem);
                 int edad = Convert.ToInt16(comboEdad.SelectedItem);
                 
-                string consulta = "filtrarPeliculaAñoGeneroEdad("+año+","+"'"+ genero +"',"+edad+",R)";
+                string consulta = "filtrarPeliculaAñoGeneroEdad("+año+","+"'"+ genero +"',"+edad+",R1, R2, R3)";
                 
                 PlQuery pelicula = new PlQuery(consulta);
                 foreach (PlQueryVariables v in pelicula.SolutionVariables)
-                    listBoxDescripcion.Items.Add(v["R"].ToString());
+                {
+                    var peliculas = v["R1"].Concat(v["R2"].Concat(v["R3"]));
+
+                    mostrarPelicula(peliculas);
+                }
+                    
             }
-            else
-                if (checkAño.Checked == true && checkGenero.Checked == true && checkEdad.Checked == false)
-                { 
-                    int año = Convert.ToInt16(comboAño.SelectedItem);
-                    string genero = Convert.ToString(comboGenero.SelectedItem);
+
+            else if (checkAño.Checked == true && checkGenero.Checked == true && checkEdad.Checked == false)
+            { 
+                int año = Convert.ToInt16(comboAño.SelectedItem);
+                string genero = Convert.ToString(comboGenero.SelectedItem);
                     
                 
-                    string consulta = "filtrarPeliculaAñoGenero("+año+","+"'"+ genero +"'"+",R)";
+                string consulta = "filtrarPeliculaAñoGenero("+año+","+"'"+ genero +"'"+",R1, R2)";
                 
-                    PlQuery pelicula = new PlQuery(consulta);
-                    foreach (PlQueryVariables v in pelicula.SolutionVariables)
-                        listJogador.Items.Add(v["R"].ToString());
+                PlQuery pelicula = new PlQuery(consulta);
+                foreach (PlQueryVariables v in pelicula.SolutionVariables)
+                {
+                    var peliculas = v["R1"].Concat(v["R2"]);
+
+                    mostrarPelicula(peliculas);
                 }
-                else
-                    if (checkAño.Checked == true && checkGenero.Checked == false && checkEdad.Checked == true)
-                    {
-                            int año = Convert.ToInt16(comboAño.SelectedItem);
+                       
+            }
+            
+            else if (checkAño.Checked == true && checkGenero.Checked == false && checkEdad.Checked == true)
+            {
+                int año = Convert.ToInt16(comboAño.SelectedItem);
                             
-                            int edad = Convert.ToInt16(comboEdad.SelectedItem);
+                int edad = Convert.ToInt16(comboEdad.SelectedItem);
 
-                            string consulta = "filtrarPeliculaAñoEdad(" + año + "," + edad + ",R)";
+                string consulta = "filtrarPeliculaAñoEdad(" + año + "," + edad + ",R1, R2)";
 
-                            PlQuery pelicula = new PlQuery(consulta);
-                            foreach (PlQueryVariables v in pelicula.SolutionVariables)
-                                listJogador.Items.Add(v["R"].ToString());
-                    }
-                    else
-                        if (checkAño.Checked == true && checkGenero.Checked == false && checkEdad.Checked == false)
-                        {
-                            int año = Convert.ToInt16(comboAño.SelectedItem);
+                PlQuery pelicula = new PlQuery(consulta);
+                foreach (PlQueryVariables v in pelicula.SolutionVariables)
+                {
+                    var peliculas = v["R1"].Concat(v["R2"]);
 
-                            string consulta = "peliculasPorAnio(" + año + ",R)";
+                    mostrarPelicula(peliculas);
+                } 
+            }
+            
+            else if (checkAño.Checked == true && checkGenero.Checked == false && checkEdad.Checked == false)
+            {
+                int año = Convert.ToInt16(comboAño.SelectedItem);
 
-                            PlQuery pelicula = new PlQuery(consulta);
-                            foreach (PlQueryVariables v in pelicula.SolutionVariables)
-                                listJogador.Items.Add(v["R"].ToString());
-                        }
-                        else
-                            if (checkAño.Checked == false && checkGenero.Checked == true && checkEdad.Checked == true)
-                            {
-                                string genero = Convert.ToString(comboGenero.SelectedItem);
-                                int edad = Convert.ToInt16(comboEdad.SelectedItem);
-                                string consulta = "filtrarPeliculaGeneroEdad('" + genero + "',"+edad+",R)";
+                string consulta = "peliculasPorAnio(" + año + ",R)";
 
-                                PlQuery pelicula = new PlQuery(consulta);
-                                foreach (PlQueryVariables v in pelicula.SolutionVariables)
-                                    listJogador.Items.Add(v["R"].ToString());
-                            }
-                            else
-                                if (checkAño.Checked == false && checkGenero.Checked == true && checkEdad.Checked == false)
-                                {
-                                    string genero = Convert.ToString(comboGenero.SelectedItem);
+                PlQuery pelicula = new PlQuery(consulta);
+                foreach (PlQueryVariables v in pelicula.SolutionVariables)
+                {
+                    var peliculas = v["R"];
+
+                    mostrarPelicula(peliculas);
+                }
+            }
+            
+            else if (checkAño.Checked == false && checkGenero.Checked == true && checkEdad.Checked == true)
+            {
+                string genero = Convert.ToString(comboGenero.SelectedItem);
+                int edad = Convert.ToInt16(comboEdad.SelectedItem);
+                string consulta = "filtrarPeliculaGeneroEdad('" + genero + "',"+edad+",R1, R2)";
+
+                PlQuery pelicula = new PlQuery(consulta);
+                foreach (PlQueryVariables v in pelicula.SolutionVariables)
+                {
+                    var peliculas = v["R1"].Concat(v["R2"]);
+
+                    mostrarPelicula(peliculas);
+                }
+            }
+            
+            else if (checkAño.Checked == false && checkGenero.Checked == true && checkEdad.Checked == false)
+            {
+                string genero = Convert.ToString(comboGenero.SelectedItem);
                                     
-                                    string consulta = "peliculasPorGenero('" + genero + "',R)";
+                string consulta = "peliculasPorGenero('" + genero + "',R)";
 
-                                    PlQuery pelicula = new PlQuery(consulta);
-                                    foreach (PlQueryVariables v in pelicula.SolutionVariables)
-                                        listJogador.Items.Add(v["R"].ToString());
-                                }
-                                else
-                                    if (checkAño.Checked == false && checkGenero.Checked == false && checkEdad.Checked == true)
-                                    {
-                                        int edad = Convert.ToInt16(comboEdad.SelectedItem);
+                PlQuery pelicula = new PlQuery(consulta);
+                foreach (PlQueryVariables v in pelicula.SolutionVariables)
+                {
+                    var peliculas = v["R"];
 
-                                        string consulta = "peliculasPorEdad(" + edad + ",R)";
+                    mostrarPelicula(peliculas);
+                }
+            }
+            
+            else if (checkAño.Checked == false && checkGenero.Checked == false && checkEdad.Checked == true)
+            {
+                int edad = Convert.ToInt16(comboEdad.SelectedItem);
 
-                                        PlQuery pelicula = new PlQuery(consulta);
-                                        foreach (PlQueryVariables v in pelicula.SolutionVariables)
-                                            listJogador.Items.Add(v["R"].ToString());
-                                    }
+                string consulta = "peliculasPorEdad(" + edad + ",R)";
+
+                PlQuery pelicula = new PlQuery(consulta);
+                foreach (PlQueryVariables v in pelicula.SolutionVariables)
+                {
+                    var peliculas = v["R"];
+
+                    mostrarPelicula(peliculas);
+                }
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -700,5 +719,32 @@ namespace MundodaBola
                 if (checkEdad.Checked == false)
                     comboEdad.Enabled = false;
         }
+
+        #region Funciones 
+
+        private void mostrarDatosPelicula(List<PlTerm> pelicula)
+        {
+            textAño.Text = pelicula[0].ToString();
+            textGenero.Text = pelicula[1].ToString();
+            textValoracion.Text = pelicula[2].ToString();
+            tbxDescripcion.Text = pelicula[3].ToString();
+            textProcedencia.Text = pelicula[4].ToString();
+            textDuracion.Text = pelicula[5].ToString();
+            textEdad.Text = pelicula[7].ToString();
+
+        }
+
+        private void mostrarPelicula(IEnumerable<PlTerm> genero)
+        {
+            groupBoxPeliculas.Enabled = true;
+
+            foreach (var peli in genero)
+            {
+                listaPeliculas.Items.Add(peli.ToString());
+            }
+
+        }
+
+        #endregion
     }
 }
