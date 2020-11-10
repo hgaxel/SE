@@ -580,12 +580,12 @@ namespace MundodaBola
                 string genero = Convert.ToString(comboGenero.SelectedItem);
                 int edad = Convert.ToInt16(comboEdad.SelectedItem);
                 
-                string consulta = "filtrarPeliculaAñoGeneroEdad("+año+","+"'"+ genero +"',"+edad+",R1, R2, R3)";
+                string consulta = "filtrarPeliculaAñoGeneroEdad(" + año + "," + "'" + genero + "'" + "," + edad + ",R)";
                 
                 PlQuery pelicula = new PlQuery(consulta);
                 foreach (PlQueryVariables v in pelicula.SolutionVariables)
                 {
-                    var peliculas = v["R1"].Concat(v["R2"].Concat(v["R3"]));
+                    var peliculas = v["R"];
 
                     mostrarPelicula(peliculas);
                 }
@@ -597,13 +597,12 @@ namespace MundodaBola
                 int año = Convert.ToInt16(comboAño.SelectedItem);
                 string genero = Convert.ToString(comboGenero.SelectedItem);
                     
-                
-                string consulta = "filtrarPeliculaAñoGenero("+año+","+"'"+ genero +"'"+",R1, R2)";
+                string consulta = "filtrarPeliculaAñoGenero(" + año + "," + "'" + genero + "'" + ",R)";
                 
                 PlQuery pelicula = new PlQuery(consulta);
                 foreach (PlQueryVariables v in pelicula.SolutionVariables)
                 {
-                    var peliculas = v["R1"].Concat(v["R2"]);
+                    var peliculas = v["R"];
 
                     mostrarPelicula(peliculas);
                 }
@@ -616,12 +615,12 @@ namespace MundodaBola
                             
                 int edad = Convert.ToInt16(comboEdad.SelectedItem);
 
-                string consulta = "filtrarPeliculaAñoEdad(" + año + "," + edad + ",R1, R2)";
+                string consulta = "filtrarPeliculaAñoEdad(" + año + "," + edad + ",R)";
 
                 PlQuery pelicula = new PlQuery(consulta);
                 foreach (PlQueryVariables v in pelicula.SolutionVariables)
                 {
-                    var peliculas = v["R1"].Concat(v["R2"]);
+                    var peliculas = v["R"];
 
                     mostrarPelicula(peliculas);
                 } 
@@ -646,12 +645,12 @@ namespace MundodaBola
             {
                 string genero = Convert.ToString(comboGenero.SelectedItem);
                 int edad = Convert.ToInt16(comboEdad.SelectedItem);
-                string consulta = "filtrarPeliculaGeneroEdad('" + genero + "',"+edad+",R1, R2)";
+                string consulta = "filtrarPeliculaGeneroEdad('" + genero + "'," + edad + ",R)";
 
                 PlQuery pelicula = new PlQuery(consulta);
                 foreach (PlQueryVariables v in pelicula.SolutionVariables)
                 {
-                    var peliculas = v["R1"].Concat(v["R2"]);
+                    var peliculas = v["R"];
 
                     mostrarPelicula(peliculas);
                 }
