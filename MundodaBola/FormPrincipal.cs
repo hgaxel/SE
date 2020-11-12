@@ -39,8 +39,13 @@ namespace SistemaExperto
             Environment.SetEnvironmentVariable("Path", @"prolog");         // establecer las variables en el archivo PL
             Environment.SetEnvironmentVariable("Path", @"prolog\\bin");    // establecer las variables en el archivo PL
 
-            string[] p = { "-q", "-f", @"peliculas.pl" };
+            string[] p = { "-q", "-f", @"Peliculas.pl", @"Peliculas_estreno.pl" };
             PlEngine.Initialize(p);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

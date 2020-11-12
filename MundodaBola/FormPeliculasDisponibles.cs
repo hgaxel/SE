@@ -32,19 +32,8 @@ namespace MundodaBola
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            /* usando o método Environment.SetEnvironmentVariable para crear variable de ambiente de swipl .
-            * para trabajar com prolog*/
-           /* Environment.SetEnvironmentVariable("SWI_HOME_DIR", @"prolog"); // establecer las variables en el archivo PL
-            Environment.SetEnvironmentVariable("Path", @"prolog");         // establecer las variables en el archivo PL
-            Environment.SetEnvironmentVariable("Path", @"prolog\\bin");    // establecer las variables en el archivo PL
-
-            string[] p = { "-q", "-f", @"peliculas.pl" };
-            PlEngine.Initialize(p);*/
-
             Iniciar();
         }
-
-
 
         private void btnConsulta_Click(object sender, EventArgs e)
         {
@@ -111,10 +100,8 @@ namespace MundodaBola
                 this.opcion3.Text = " FAMILIA , CIENCIA FICCIÓN , FANTASTICAS , ROMANTICAS. "; // +2
                 this.opcion4.Text = " ANIMES , DOCUMENTALES , INFANTILES , PREMIADAS";   // +2
             }
-            else
-            {
-                Application.Exit();
-            }
+            
+            else Application.Exit();
         }
 
         private void pregunta2()

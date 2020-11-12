@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnConsulta = new System.Windows.Forms.Button();
-            this.cbOpcoes = new System.Windows.Forms.ComboBox();
             this.listaPeliculas = new System.Windows.Forms.ListBox();
             this.pregunta = new System.Windows.Forms.Label();
             this.opcion4 = new System.Windows.Forms.RadioButton();
@@ -68,38 +66,12 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
+            this.btnConsulta = new System.Windows.Forms.Button();
+            this.cbOpcoes = new System.Windows.Forms.ComboBox();
             this.groupBoxDatos.SuspendLayout();
             this.groupBoxPeliculas.SuspendLayout();
             this.groupFiltrado.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnConsulta
-            // 
-            this.btnConsulta.Location = new System.Drawing.Point(1210, 381);
-            this.btnConsulta.Margin = new System.Windows.Forms.Padding(4);
-            this.btnConsulta.Name = "btnConsulta";
-            this.btnConsulta.Size = new System.Drawing.Size(143, 51);
-            this.btnConsulta.TabIndex = 9;
-            this.btnConsulta.Text = "Consulta";
-            this.btnConsulta.UseVisualStyleBackColor = true;
-            this.btnConsulta.Visible = false;
-            this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
-            // 
-            // cbOpcoes
-            // 
-            this.cbOpcoes.FormattingEnabled = true;
-            this.cbOpcoes.Items.AddRange(new object[] {
-            "Atacante Brasileiro",
-            "Meia Brasileiro",
-            "Atacante Europeu",
-            "Zagueiro Brasileiro",
-            "Prueba"});
-            this.cbOpcoes.Location = new System.Drawing.Point(757, 326);
-            this.cbOpcoes.Margin = new System.Windows.Forms.Padding(4);
-            this.cbOpcoes.Name = "cbOpcoes";
-            this.cbOpcoes.Size = new System.Drawing.Size(133, 21);
-            this.cbOpcoes.TabIndex = 8;
-            this.cbOpcoes.Visible = false;
             // 
             // listaPeliculas
             // 
@@ -119,7 +91,7 @@
             this.pregunta.AutoSize = true;
             this.pregunta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pregunta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pregunta.Location = new System.Drawing.Point(792, 33);
+            this.pregunta.Location = new System.Drawing.Point(789, 21);
             this.pregunta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.pregunta.Name = "pregunta";
             this.pregunta.Size = new System.Drawing.Size(0, 15);
@@ -130,7 +102,7 @@
             this.opcion4.AutoSize = true;
             this.opcion4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.opcion4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.opcion4.Location = new System.Drawing.Point(810, 243);
+            this.opcion4.Location = new System.Drawing.Point(807, 231);
             this.opcion4.Margin = new System.Windows.Forms.Padding(4);
             this.opcion4.Name = "opcion4";
             this.opcion4.Size = new System.Drawing.Size(14, 13);
@@ -143,7 +115,7 @@
             this.opcion3.AutoSize = true;
             this.opcion3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.opcion3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.opcion3.Location = new System.Drawing.Point(810, 188);
+            this.opcion3.Location = new System.Drawing.Point(807, 176);
             this.opcion3.Margin = new System.Windows.Forms.Padding(4);
             this.opcion3.Name = "opcion3";
             this.opcion3.Size = new System.Drawing.Size(14, 13);
@@ -156,7 +128,7 @@
             this.opcion2.AutoSize = true;
             this.opcion2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.opcion2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.opcion2.Location = new System.Drawing.Point(810, 136);
+            this.opcion2.Location = new System.Drawing.Point(807, 124);
             this.opcion2.Margin = new System.Windows.Forms.Padding(4);
             this.opcion2.Name = "opcion2";
             this.opcion2.Size = new System.Drawing.Size(14, 13);
@@ -169,7 +141,7 @@
             this.opcion1.AutoSize = true;
             this.opcion1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.opcion1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.opcion1.Location = new System.Drawing.Point(810, 80);
+            this.opcion1.Location = new System.Drawing.Point(807, 68);
             this.opcion1.Margin = new System.Windows.Forms.Padding(4);
             this.opcion1.Name = "opcion1";
             this.opcion1.Size = new System.Drawing.Size(14, 13);
@@ -182,7 +154,7 @@
             this.button1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(1008, 287);
+            this.button1.Location = new System.Drawing.Point(1005, 275);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(220, 40);
@@ -195,7 +167,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(17, 49);
+            this.label1.Location = new System.Drawing.Point(20, 46);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 17;
@@ -221,9 +193,9 @@
             this.groupBoxDatos.Controls.Add(this.label1);
             this.groupBoxDatos.Enabled = false;
             this.groupBoxDatos.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBoxDatos.Location = new System.Drawing.Point(15, 349);
+            this.groupBoxDatos.Location = new System.Drawing.Point(15, 326);
             this.groupBoxDatos.Name = "groupBoxDatos";
-            this.groupBoxDatos.Size = new System.Drawing.Size(713, 400);
+            this.groupBoxDatos.Size = new System.Drawing.Size(725, 374);
             this.groupBoxDatos.TabIndex = 18;
             this.groupBoxDatos.TabStop = false;
             this.groupBoxDatos.Text = "DATOS PELICULA";
@@ -233,16 +205,16 @@
             this.tbxDescripcion.BackColor = System.Drawing.Color.Red;
             this.tbxDescripcion.Font = new System.Drawing.Font("Footlight MT Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxDescripcion.ForeColor = System.Drawing.Color.White;
-            this.tbxDescripcion.Location = new System.Drawing.Point(20, 246);
+            this.tbxDescripcion.Location = new System.Drawing.Point(23, 237);
             this.tbxDescripcion.Multiline = true;
             this.tbxDescripcion.Name = "tbxDescripcion";
-            this.tbxDescripcion.Size = new System.Drawing.Size(660, 108);
+            this.tbxDescripcion.Size = new System.Drawing.Size(668, 105);
             this.tbxDescripcion.TabIndex = 32;
             // 
             // textValoracion
             // 
             this.textValoracion.Enabled = false;
-            this.textValoracion.Location = new System.Drawing.Point(611, 112);
+            this.textValoracion.Location = new System.Drawing.Point(608, 112);
             this.textValoracion.Name = "textValoracion";
             this.textValoracion.Size = new System.Drawing.Size(87, 19);
             this.textValoracion.TabIndex = 31;
@@ -250,7 +222,7 @@
             // textEdad
             // 
             this.textEdad.Enabled = false;
-            this.textEdad.Location = new System.Drawing.Point(611, 81);
+            this.textEdad.Location = new System.Drawing.Point(608, 81);
             this.textEdad.Name = "textEdad";
             this.textEdad.Size = new System.Drawing.Size(87, 19);
             this.textEdad.TabIndex = 30;
@@ -258,7 +230,7 @@
             // textDuracion
             // 
             this.textDuracion.Enabled = false;
-            this.textDuracion.Location = new System.Drawing.Point(611, 52);
+            this.textDuracion.Location = new System.Drawing.Point(608, 52);
             this.textDuracion.Name = "textDuracion";
             this.textDuracion.Size = new System.Drawing.Size(87, 19);
             this.textDuracion.TabIndex = 29;
@@ -267,7 +239,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label8.Location = new System.Drawing.Point(17, 210);
+            this.label8.Location = new System.Drawing.Point(20, 217);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(95, 13);
             this.label8.TabIndex = 28;
@@ -276,7 +248,7 @@
             // textProcedencia
             // 
             this.textProcedencia.Enabled = false;
-            this.textProcedencia.Location = new System.Drawing.Point(135, 121);
+            this.textProcedencia.Location = new System.Drawing.Point(138, 118);
             this.textProcedencia.Name = "textProcedencia";
             this.textProcedencia.Size = new System.Drawing.Size(282, 19);
             this.textProcedencia.TabIndex = 27;
@@ -285,7 +257,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label7.Location = new System.Drawing.Point(441, 81);
+            this.label7.Location = new System.Drawing.Point(464, 81);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(125, 13);
             this.label7.TabIndex = 26;
@@ -295,7 +267,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label6.Location = new System.Drawing.Point(441, 49);
+            this.label6.Location = new System.Drawing.Point(464, 49);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(107, 13);
             this.label6.TabIndex = 25;
@@ -305,7 +277,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(17, 121);
+            this.label5.Location = new System.Drawing.Point(20, 118);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 13);
             this.label5.TabIndex = 24;
@@ -314,7 +286,7 @@
             // textGenero
             // 
             this.textGenero.Enabled = false;
-            this.textGenero.Location = new System.Drawing.Point(135, 81);
+            this.textGenero.Location = new System.Drawing.Point(138, 78);
             this.textGenero.Name = "textGenero";
             this.textGenero.Size = new System.Drawing.Size(282, 19);
             this.textGenero.TabIndex = 23;
@@ -322,7 +294,7 @@
             // textAño
             // 
             this.textAño.Enabled = false;
-            this.textAño.Location = new System.Drawing.Point(135, 163);
+            this.textAño.Location = new System.Drawing.Point(138, 160);
             this.textAño.Name = "textAño";
             this.textAño.Size = new System.Drawing.Size(87, 19);
             this.textAño.TabIndex = 22;
@@ -330,7 +302,7 @@
             // txtNombre
             // 
             this.txtNombre.Enabled = false;
-            this.txtNombre.Location = new System.Drawing.Point(93, 49);
+            this.txtNombre.Location = new System.Drawing.Point(96, 46);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(324, 19);
             this.txtNombre.TabIndex = 21;
@@ -339,7 +311,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(441, 109);
+            this.label4.Location = new System.Drawing.Point(464, 109);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(90, 13);
             this.label4.TabIndex = 20;
@@ -349,7 +321,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(17, 81);
+            this.label3.Location = new System.Drawing.Point(20, 78);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 13);
             this.label3.TabIndex = 19;
@@ -359,7 +331,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(17, 166);
+            this.label2.Location = new System.Drawing.Point(20, 163);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 18;
@@ -368,7 +340,7 @@
             // button2
             // 
             this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button2.Location = new System.Drawing.Point(213, 207);
+            this.button2.Location = new System.Drawing.Point(203, 215);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(282, 52);
             this.button2.TabIndex = 19;
@@ -384,7 +356,7 @@
             this.groupBoxPeliculas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBoxPeliculas.Location = new System.Drawing.Point(15, 18);
             this.groupBoxPeliculas.Name = "groupBoxPeliculas";
-            this.groupBoxPeliculas.Size = new System.Drawing.Size(728, 293);
+            this.groupBoxPeliculas.Size = new System.Drawing.Size(728, 282);
             this.groupBoxPeliculas.TabIndex = 20;
             this.groupBoxPeliculas.TabStop = false;
             this.groupBoxPeliculas.Text = "PELICULAS ENCONTRADAS";
@@ -403,7 +375,7 @@
             this.groupFiltrado.Controls.Add(this.label12);
             this.groupFiltrado.Enabled = false;
             this.groupFiltrado.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupFiltrado.Location = new System.Drawing.Point(757, 456);
+            this.groupFiltrado.Location = new System.Drawing.Point(765, 407);
             this.groupFiltrado.Name = "groupFiltrado";
             this.groupFiltrado.Size = new System.Drawing.Size(573, 293);
             this.groupFiltrado.TabIndex = 21;
@@ -538,20 +510,48 @@
             // button4
             // 
             this.button4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button4.Location = new System.Drawing.Point(917, 386);
+            this.button4.Location = new System.Drawing.Point(919, 345);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(248, 52);
+            this.button4.Size = new System.Drawing.Size(248, 46);
             this.button4.TabIndex = 23;
             this.button4.Text = "FILTRAR PELICULAS";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // btnConsulta
+            // 
+            this.btnConsulta.Location = new System.Drawing.Point(747, 337);
+            this.btnConsulta.Margin = new System.Windows.Forms.Padding(4);
+            this.btnConsulta.Name = "btnConsulta";
+            this.btnConsulta.Size = new System.Drawing.Size(143, 51);
+            this.btnConsulta.TabIndex = 9;
+            this.btnConsulta.Text = "Consulta";
+            this.btnConsulta.UseVisualStyleBackColor = true;
+            this.btnConsulta.Visible = false;
+            this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
+            // 
+            // cbOpcoes
+            // 
+            this.cbOpcoes.FormattingEnabled = true;
+            this.cbOpcoes.Items.AddRange(new object[] {
+            "Atacante Brasileiro",
+            "Meia Brasileiro",
+            "Atacante Europeu",
+            "Zagueiro Brasileiro",
+            "Prueba"});
+            this.cbOpcoes.Location = new System.Drawing.Point(747, 308);
+            this.cbOpcoes.Margin = new System.Windows.Forms.Padding(4);
+            this.cbOpcoes.Name = "cbOpcoes";
+            this.cbOpcoes.Size = new System.Drawing.Size(133, 21);
+            this.cbOpcoes.TabIndex = 8;
+            this.cbOpcoes.Visible = false;
             // 
             // FormPeliculasDisponibles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1382, 793);
+            this.ClientSize = new System.Drawing.Size(1350, 729);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.groupFiltrado);
             this.Controls.Add(this.groupBoxPeliculas);
@@ -582,9 +582,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnConsulta;
-        private System.Windows.Forms.ComboBox cbOpcoes;
         private System.Windows.Forms.ListBox listaPeliculas;
         private System.Windows.Forms.Label pregunta;
         private System.Windows.Forms.RadioButton opcion4;
@@ -623,6 +620,8 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnFiltrar;
         private System.Windows.Forms.TextBox tbxDescripcion;
+        private System.Windows.Forms.Button btnConsulta;
+        private System.Windows.Forms.ComboBox cbOpcoes;
     }
 }
 
