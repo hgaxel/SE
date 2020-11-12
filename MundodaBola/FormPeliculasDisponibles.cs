@@ -94,7 +94,7 @@ namespace MundodaBola
         {
             if (MessageBox.Show("SISTEMA EXPERTO - SISIN 2020","BIENVENIDO", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
             {
-                this.pregunta.Text = " ¿EN QUE OPCIÓN SE ENCUENTRA EL GENERO DE LA PELICULA QUE VISTE POR ULTIMA VEZ? ";
+                this.pregunta.Text = " ¿DÓNDE SE ENCUENTRA EL GENERO DE PELICULA QUE VISTE POR ÚLTIMA VEZ? ";
                 this.opcion1.Text = " AVENTURAS, ACCIÓN , COMEDIAS, INTERNACIONALES. "; // +2
                 this.opcion2.Text = " TERROR , DRAMA , ROMANTICO , TRHILLERS/SUSPENSE. ";    // +2
                 this.opcion3.Text = " FAMILIA , CIENCIA FICCIÓN , FANTASTICAS , ROMANTICAS. "; // +2
@@ -117,34 +117,34 @@ namespace MundodaBola
         private void pregunta3()
         {
             this.pregunta.Text = " ¿QUÉ EDAD TIENES? ";
-            this.opcion1.Text = " +7. ";        //DESCARTAMOS COMEDIAS,TERROR,TRAGEDIA,DRAMA,ACCION, DOCUMENTAL lista4 +2
-            this.opcion2.Text = " +13. ";       //DESCARTAMOS DOCUMENTAL,TERROR,DRAMA                           lista3
-            this.opcion3.Text = " +16.";        //      +5                                                      lista1
-            this.opcion4.Text = " +18.";        //      +7                                                      lista1,lista2,lista3,lista4
+            this.opcion1.Text = " 7 AÑOS. ";        //DESCARTAMOS COMEDIAS,TERROR,TRAGEDIA,DRAMA,ACCION, DOCUMENTAL lista4 +2
+            this.opcion2.Text = " 13 AÑOS. ";       //DESCARTAMOS DOCUMENTAL,TERROR,DRAMA                           lista3
+            this.opcion3.Text = " 16 AÑOS.";        //      +5                                                      lista1
+            this.opcion4.Text = " +18 AÑOS";        //      +7                                                      lista1,lista2,lista3,lista4
             seleccion++;
         }
 
         private void pregunta4()
         {
             this.pregunta.Text = " ¿QUÉ PELICULA NO VOLVERIAS A VER ? ";
-            this.opcion1.Text = " Santana."; //ACCION, EXTRANJERAS                            lista1
-            this.opcion2.Text = " Robin Hood."; //ACCION                                      lista1
-            this.opcion3.Text = " Visions."; //TERROR Y THRILLER                              lista2
+            this.opcion1.Text = " Terminator: Genesis."; //ACCION, EXTRANJERAS                            lista1
+            this.opcion2.Text = " Dragon Ball Z: La resurreccion de F."; //ACCION                                      lista1
+            this.opcion3.Text = " Creep 2."; //TERROR Y THRILLER                              lista2
             this.opcion4.Text = " Un mundo azul: La carrera para resolver la crisis del agua."; //DOCUM Y EXTRANJ  lista3,lista4
             seleccion++;
         }
         private void pregunta5()
         {
             this.pregunta.Text = " ¿CUAL DE ESTAS PELICULAS VERIAS MÁS DE UNA VEZ? ";
-            this.opcion1.Text = " Bumblebee. "; //ACCION, CF, FANTASIAS           lista1
+            this.opcion1.Text = " Una noche de locos. "; //ACCION, CF, FANTASIAS           lista1
             this.opcion2.Text = " Pokémon: Mewtwo contraataca."; //ANIME          lista4
-            this.opcion3.Text = " Animas "; //TERROR                              lista2
+            this.opcion3.Text = " Pesadillas. "; //TERROR                              lista2
             this.opcion4.Text = " El Árbol de la Sangre. "; //Dramas, Españolas, Extranjeras    lista2 y lista3
             seleccion++;
         }
         private void pregunta6()
         {
-            this.pregunta.Text = " SELECCIONA UNA DE ESTAS PELICULAS QUE VERIAS. ";
+            this.pregunta.Text = " SELECCIONA UNA DE ESTAS PELICULAS . ";
             this.opcion1.Text = " Destino Final.";  //terror            lista2
             this.opcion2.Text = " Tsunami. ";         //cienciaf        lista3
             this.opcion3.Text = " Cómo deshacerte de tu jefe. "; //Com  lista1
@@ -157,12 +157,12 @@ namespace MundodaBola
             this.opcion1.Text = " Flechazo a primera vista. "; //COME, EXTRAN, ROMANTIC     lista1 y lista 3
             this.opcion2.Text = " Nadie duerme en el bosque esta noche"; //TERROR           lista2
             this.opcion3.Text = " El Silencio de Otros";  //doc , extranjeras               lista 4
-            this.opcion4.Text = " No tengo pareja :'( . ";                       //         lista1
+            this.opcion4.Text = " No tengo pareja :'(  . ";                       //         lista1
             seleccion++;
         }
         private void pregunta8()
         {
-            this.pregunta.Text = " ¿QUÉ PELICULA ANTIGUA VOLVERIAS A MIRAR ? ";     
+            this.pregunta.Text = " ¿QUÉ PELICULA ANTIGUA DE ESTAS TE GUSTO MÁS? ";     
             this.opcion1.Text = " Jumanji. "; //ciencia y aventura              lista3 y lista2
             this.opcion2.Text = " Rambo. ";   //accion                          lista1
             this.opcion3.Text = " Scary Movie"; //comedi                        lista1
@@ -279,23 +279,23 @@ namespace MundodaBola
                 case 4:
                     if (this.opcion1.Checked == true)
                     {
-                        totalLista1++;
+                        totalLista1--;
                     }
                     else
                     if (this.opcion2.Checked == true)
                     {
-                        totalLista1++;
+                        totalLista1--;
                     }
                     else
                     if (this.opcion3.Checked == true)
                     {
-                        totalLista2++;
+                        totalLista2--;
                     }
                     else
                     if (this.opcion4.Checked == true)
                     {
-                        totalLista3++;
-                        totalLista4++;
+                        totalLista3--;
+                        totalLista4--;
                     }
                     pregunta5();
                     Limpiar();
@@ -672,10 +672,13 @@ namespace MundodaBola
                     mostrarPelicula(peliculas);
                 }
             }
+            button2.BackColor = Color.Green;
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
+            button4.BackColor = Color.Green;
+            btnFiltrar.BackColor = Color.Green;
             groupFiltrado.Enabled = true;
         }
 
